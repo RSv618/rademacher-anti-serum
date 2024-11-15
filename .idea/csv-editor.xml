@@ -3,7 +3,7 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\your_returns_data.csv">
+        <entry key="\log_returns_matrix.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

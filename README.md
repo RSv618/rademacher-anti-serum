@@ -10,10 +10,14 @@ This repository provides a Python implementation of the Rademacher Anti-Serum, b
 Rademacher Complexity measures how well a set of strategies aligns with random noise. High Rademacher Complexity indicates overfitting, as it suggests that a strategy's performance could be due to random fluctuations. The RAS adjustment corrects for this bias by adjusting Sharpe Ratios, producing a more robust performance estimate.
 
 ## Installation
+### Requirements
 This code requires Python 3.8 or higher. You can install the necessary libraries via:
 ```
 pip install numpy pandas
 ```
+### Files
+- ras.py: Main Python script implementing the Rademacher Anti-Serum adjustment.
+- log_returns_matrix.csv: Sample dataset containing log returns for various strategies.
 
 ## Usage
 1. Prepare Your Data: Organize strategy returns in a DataFrame, with each column representing a strategy.
