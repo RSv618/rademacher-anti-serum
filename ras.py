@@ -28,7 +28,7 @@ def rademacher_complexity(returns_matrix: np.ndarray, n_random_vectors: int = 10
 
 
 def ras_sharpe_adjustment(sharpe_ratios: pd.Series, complexity: float,
-                          n_time_periods: float, n_strategies: float, delta: float=0.9) -> pd.Series:
+                          n_time_periods: float, n_strategies: float, delta: float=0.1) -> pd.Series:
     """
     Calculates RAS-adjusted Sharpe Ratios for a set of strategies to account for overfitting bias.
 
