@@ -37,7 +37,7 @@ def ras_sharpe_adjustment(sharpe_ratios: pd.Series, complexity: float,
         complexity (float): The empirical Rademacher Complexity.
         n_time_periods (float): The number of time periods (observations).
         n_strategies (float): The number of strategies.
-        delta (float): Confidence level (default: 0.9) for the estimation error adjustment.
+        delta (float): Confidence level (default: 0.1) for the estimation error adjustment.
 
     Returns:
         pd.Series: The RAS-adjusted Sharpe Ratios.
