@@ -14,15 +14,18 @@ def rademacher_complexity(returns_matrix: np.ndarray, n_random_vectors: int = 10
     Returns:
         float: The estimated empirical Rademacher Complexity, reflecting the degree of performance sensitivity to random noise.
     """
-    n_time_periods, n_strategies = returns_matrix.shape
+    n_time_periods: int = len(returns_matrix)
+    choices: np.ndarray = np.array([-1.0, 1.0], dtype=np.float64)
 
     # Generate multiple Rademacher vectors
-    rademacher_vectors = np.random.choice([-1, 1], size=(n_random_vectors, n_time_periods))
+    rademacher_vectors: np.ndarray = np.random.choice(choices, size=(n_random_vectors, n_time_periods))
+
+    # Transpose the matrix to iterate over each column
+    returns_matrix = np.transpose(returns_matrix)
 
     # Rademacher complexity calculation
     complexity: float = float(np.mean(
-        [np.max([np.abs(np.matmul(epsilon, returns_col)) / n_time_periods
-                 for returns_col in np.transpose(returns_matrix)])
+        [np.max([np.abs(np.dot(epsilon, returns_col)) / n_time_periods for returns_col in returns_matrix])
          for epsilon in rademacher_vectors]))
     return complexity
 
